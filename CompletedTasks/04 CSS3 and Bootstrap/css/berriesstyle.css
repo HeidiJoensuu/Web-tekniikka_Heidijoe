@@ -1,0 +1,41 @@
+body{
+    font-family: "Calibri Light";
+    text-align: center;
+}
+h1{
+    font-size: 6em;
+    margin: 0em;
+}
+dl{
+    margin: auto;
+    width: 350px;
+    border-bottom: 2px solid black;
+
+}
+dt{
+    font-size: 3em;
+    border-collapse: collapse;
+    border-top: 2px solid black;
+}
+dd{
+    margin: auto;
+    font-style: italic;
+    font-size: 1.2em;
+    border-collapse: collapse;
+    padding-bottom: 12px;
+
+}
+dt.one, dd.one{
+    background-color: lightblue;
+
+
+}
+dt.two, dd.two{
+    background-color: lightpink;
+
+}
+dt.three, dd.three{
+    background-color: tomato;
+
+
+}

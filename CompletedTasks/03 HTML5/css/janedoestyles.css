@@ -1,0 +1,9 @@
+body{
+    background-color: #1b1d26;
+    font-family: "Berlin Sans FB";
+    color: aliceblue;
+}
+
+figure#floating {
+    float: right;
+}

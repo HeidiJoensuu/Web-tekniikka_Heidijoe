@@ -1,0 +1,54 @@
+body {
+    font-family: "Comic Sans MS", Verdana, sans-serif;
+    background-color: #0D3349;
+}
+
+h2 {
+    color: greenyellow;
+    font-weight: bold;
+}
+h1 {
+    color: rgba(65,105,225,0.7);
+    font-size: 4.0em;
+}
+
+ul,ol,p{
+    text-indent: 5px;
+    position: relative;
+    left: 30px;
+
+}
+
+ul, ol {
+    font-size: 0.8em;
+    color: darkgrey;
+    border-style: solid dashed;
+
+}
+figcaption{
+    font-size: 0.6em;
+    font-weight: bold;
+}
+.copyright_notice {
+    font-size: 0.8em;
+}
+#special {
+    font-size: 0.8em;
+    color: yellowgreen;
+    font-style: italic;
+    border-left: 2px solid black;
+    margin-left: 40px;
+    padding-left: 10px;
+}
+code {
+    position: relative;
+    left: 65px;
+    font-size: 1.2em;
+}
+p::first-letter {
+    font-size:8em;
+}
+
+p::first-line {
+    font-weight: bold;
+}

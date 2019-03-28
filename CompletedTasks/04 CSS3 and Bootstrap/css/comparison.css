@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, Verdana, sans-serif;
+
+
+}
+table{
+    border: 1px solid black;
+    border-top: 3px solid #ddd;
+    border-collapse: collapse;
+}
+
+caption{
+    border: 1px solid black;
+    border-bottom: none;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+#upper{
+    background-color: red;
+    color: white;
+    width: 100%;
+
+}
+td, th{
+    padding: 8px;
+
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+th:nth-child(1),td:nth-child(1){
+    font-weight: bold;
+    border-right: 3px solid #ddd ;
+}
+
