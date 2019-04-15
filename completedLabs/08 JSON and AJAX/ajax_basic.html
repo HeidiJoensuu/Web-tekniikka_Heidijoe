@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ajax Request Example</title>
+</head>
+
+<body>
+  <span id="ajaxButton" style="cursor: pointer; text-decoration: underline">
+    Make a request
+  </span>
+  <form>
+      <input type="text" value="url" id="text">
+      <input type="button" value="click--->" id="textButton">
+  </form>
+<!--
+Define a new callback function, similar to alertContents which checks whether the requested URL has a “404” status
+or not.
+If it does, pop up an alert saying “Site is DOWN!”
+Adjust the appropriate event listener in the makeRequest function of ajax_basic.html,
+so that your new callback is set as the handler for all HTTP requests made by your checker page.
+-->
+
+  <script type="text/javascript">
+  (function() {
+    var httpRequest;
+    var testUrl = 'data/story.json';
+    var url = document.getElementById("text").value;
+    // Use Github Gist when no web server is available
+    // var testUrl = 'https://gist.githubusercontent.com/c0lin/571d38b984d41b44aacf/raw/story.json';
+    document.getElementById("ajaxButton").onclick = function() { makeRequest(testUrl); };
+    document.getElementById("textButton").onclick = function() { makeRequest(url); };
+
+    function makeRequest(url) {
+      if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+        httpRequest = new XMLHttpRequest();
+      } else if (window.ActiveXObject) { // IE
+        try {
+          httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+        } 
+        catch (e) {
+          try {
+            httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+          } 
+          catch (e) {}
+        }
+      }
+
+      if (!httpRequest) {
+        alert('Giving up :( Cannot create an XMLHTTP instance');
+        return false;
+      }
+
+      // set a callback function for when the httpRequest completes
+      httpRequest.onreadystatechange = alertContents;
+
+      // now do the actual AJAX request
+      httpRequest.open('GET', url);
+      httpRequest.send();
+    }
+
+    // the callback
+    // this will be run when the request completes (see above)
+    function alertContents() {
+      if (httpRequest.readyState === 4) {
+        if (httpRequest.status === 200) {
+          alert(httpRequest.responseText);
+        } else if (httpRequest.status === 404){
+            alert("Site is DOWN!");
+        }else {
+          alert('There was a problem with the request.');
+        }
+
+      }else {alert("There may be a problem with course")};
+    }
+  })();
+  </script>
+
+</body>
+</html>

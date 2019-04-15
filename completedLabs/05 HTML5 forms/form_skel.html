@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!--
+	This page demonstrates a form.
+	-->
+	<head>
+		<meta charset="utf-8"/>
+		<title>Demonstrating HTML forms</title>
+		<link href="css/form.css" type="text/css" rel="stylesheet" />
+	</head>
+	
+	<body>
+		<h1>Turnitin</h1>
+		<form  lang="fi" action="">
+			<fieldset>
+				<legend>Henkilötiedot</legend>
+				<div>
+					Name: <input type="text" name="studentname" placeholder="Etu- ja sukunimi"/>
+				</div>
+				<div>
+					Student id:
+					<input type="text" name="id"  placeholder="Opiskelijanumero" pattern="[A-Za-z]{3}\-\d{1}"/>
+				</div>
+				<div>
+					Email:
+					<!--
+					Make an input named "email"
+					-->
+					<input type="email" name="Email" oninvalid="setCustomValidity('Diipa Daaba duuvbs')"/>
+				</div>
+				<div>
+					Assignment:
+					<!--
+					Make an input named "assignment"
+					-->
+					<input type="text" name="Assignment" placeholder="Tehtävä"/>
+
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>Muut tiedot</legend>
+					<div>
+						Code:
+						<!--
+						Make an input named "code" which is a text area to put student's code into.
+						-->
+						<input type="text" name="Code" placeholder="Opintokoodi" pattern="[0-9A-Ya-z]{5}" />
+
+					</div>
+					<div>
+						<label>Cheat:
+					<!--
+						Make an input named "cheat" which is a check box the student must check.
+					-->
+						<input type="checkbox" name="Assignment" /></label>
+					</div>
+
+					<div>
+						Score:
+					<!--
+						Make an input named "score" which is a list of choices for the score
+					-->
+						<select name="score">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+					</div>
+				<br>
+			<label><input type="checkbox" name="vehicle" value="Bike">I have a bike</label><br>
+			<label><input type="checkbox" name="vehicle" value="Car">I have a car </label>
+				<br>
+				<br>
+			<fieldset>
+				<legend>Credit Card</legend>
+				<label><input type="radio" name="card" value="Visa">Visa</label><br>
+				<label><input type="radio" name="card" value="MCard">MasterCard </label>
+			</fieldset>
+				<div>
+					<label>Pay:
+						<!--
+                            Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
+                        -->
+						<input type="radio" name="Pay" /></label>
+				</div>
+		</form>
+		<br>
+		<input type="submit" /><br>
+		<a href="http://jigsaw.w3.org/css-validator/check/referer" id="oikea">Validate</a>
+	</body>
+</html>

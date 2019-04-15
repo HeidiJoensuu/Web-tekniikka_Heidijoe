@@ -1,0 +1,23 @@
+body{
+    background-color: #1b1d26;
+    font-family: "Berlin Sans FB";
+    color: aliceblue;
+}
+
+figure#floating {
+    float: right;
+}
+table{
+    margin: auto;
+    text-align: center;
+    padding: 12px;
+}
+td{
+    padding: 5px;
+}
+#first{
+    font-weight: bolder;
+}
+dl{
+    padding-left: 4em;
+}

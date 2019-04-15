@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Coffee Constructor</title>
+<script type="module">
+
+    import * as $ from './idModel.js';
+
+    function Coffee(roast, ounces) {
+        this.roast = roast;
+        this.ounces = ounces;
+        this.getSize = function() {
+            if (this.ounces === 8) {
+                return "small";
+            } else if (this.ounces === 12) {
+                return "medium";
+            } else if (this.ounces === 16) {
+                return "large";
+            }
+        };
+        this.order = function() {
+            var msg;
+            switch (this.getSize()) {
+                case "small":
+                case "medium":
+                case "large":
+                    msg = "You've ordered a " + this.getSize() + " " + this.roast + " coffee.";
+                    break;
+                default:
+                    msg = "We don't have a " + this.roast + " in that size!";
+                    break;
+            }
+            return msg;
+        };
+    }
+
+    function Tea(type, ounces) {
+        this.type = type;
+        this.ounces = ounces;
+        this.getSize = function() {
+            if (this.ounces === 8) {
+                return "small";
+            } else if (this.ounces === 12) {
+                return "medium";
+            } else if (this.ounces === 16) {
+                return "large";
+            }
+        };
+        this.getSteepTime = function () {
+            if (this.ounces === 8) {
+                return "3 minutes steeping";
+            } else if (this.ounces === 12) {
+                return "5 minutes steeping";
+            } else if (this.ounces === 16) {
+                return "10 minutes steeping";
+            }
+        };
+        this.order = function() {
+            var msg;
+            switch (this.getSize()) {
+                case "small":
+                case "medium":
+                case "large":
+                    msg = "You've ordered a " + this.getSteepTime() + " " + this.type + " tea.";
+                    break;
+                default:
+                    msg = "We don't have a " + this.type + " in that size!";
+                    break;
+            }
+            return msg;
+        };
+    }
+    function sip() {
+        console.log('Hmm, tasty!');
+    }
+
+    Tea.prototype.sip = sip;
+
+
+    var coffee = new Coffee("House Blend", 12);
+    console.log(coffee.order());
+
+    var darkRoast = new Coffee("Dark Roast", 16);
+    console.log(darkRoast.order());
+
+    var specialBlend = new Coffee("Special Blend", 200);
+    console.log(specialBlend.order());
+
+    var earlgrey = new Tea("Earl Grey", 8);
+    console.log(earlgrey.order());
+
+    var greentea = new Tea("Green tea", 16);
+    console.log(greentea.order());
+
+    var blackjack = new Tea("Black Jack", 50);
+    console.log(blackjack.order());
+
+    greentea.sip();
+    console.log($.id(6));
+
+
+</script>
+</head>
+<body>
+    <p id="6"></p>
+</body>
+</html>
+

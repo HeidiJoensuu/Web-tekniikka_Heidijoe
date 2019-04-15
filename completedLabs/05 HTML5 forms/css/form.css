@@ -1,0 +1,16 @@
+
+input[type="text"] {
+    color : blue;
+}
+input[type="submit"] {
+    font-weight : bold;
+}
+form{
+    width: 12em;
+    float: left;
+    background-color: lightblue;
+}
+#oikea{
+    margin-left: 105px;
+
+}

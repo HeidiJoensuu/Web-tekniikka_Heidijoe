@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Map Coordinates</title>
+  <script>
+	window.onload = init;
+	function init() {
+		var map = document.getElementById("map");
+		map.onmousemove = showCoords;
+		var mydiv = document.getElementById("mydiv");
+		mydiv.onclick = addtext;
+		var list = document.getElementById("list");
+		list.onclick = createList;
+	}
+	
+	function showCoords(eventObj) {
+		var coords = document.getElementById("coords");
+		var x = eventObj.clientX;
+		var y = eventObj.clientY;
+		coords.innerHTML = "Map coordinates: " + x + ", " + y;
+	}
+
+	function addtext(){
+		if (document.createTextNode){
+			var textToAdd = " Div was clicked! "
+			var newNode = document.createTextNode(textToAdd);
+			document.getElementById("mydiv").appendChild(newNode);
+		} else {
+			alert("Looks like you have an old browser!");
+		}
+	}
+	function createList() {
+	    if (document.createElement){
+	        var newList = document.createElement("UL");
+            document.getElementById("list").appendChild(newList);
+            for (i=0; i<=99; i++){
+                var newNode = document.createElement("LI");
+                newNode.innerHTML = i;
+                newList.appendChild(newNode);
+            }
+        } else {
+	        alert("Seems like and old browser you have.")
+        }
+
+    }
+  </script>
+</head>
+<body>
+	<img id="map" src="data/map.jpg">
+	<p id="coords">Move mouse over map to find coordinates...</p>
+	<div id="mydiv" style="border:1px solid red">I am a DIV! Click me.</div>
+    <div id="list">Clicketi list</div>
+</body>
+</html>
+<!--
+Use the createElement method of the document object to add a new list <ul> to the DOM 3
+
+Populate this list using a JS for loop which uses appendChild to add list items <li>,
+using the new <ul> as the parent node.
+
+Use a nested innerHTML assignment to put some text in your list items.
+-->
